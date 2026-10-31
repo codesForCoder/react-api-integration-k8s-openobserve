@@ -10,8 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@openobserve/browser-logs": "^0.4.3",
-    "@openobserve/browser-rum": "^0.4.3",
     "@tailwindcss/vite": "^4.3.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
