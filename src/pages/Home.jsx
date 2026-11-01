@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import TrafficFlow from "@/components/TrafficFlow.jsx";
 
 const apps = [
   {
@@ -140,6 +141,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <TrafficFlow />
     </div>
   );
 }
