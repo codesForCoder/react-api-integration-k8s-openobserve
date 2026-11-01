@@ -43,6 +43,7 @@ function SpringApp() {
   const [kafkaLoading, setKafkaLoading] = useState(false);
   const [kafkaMessage, setKafkaMessage] = useState(null);
   const [kafkaError, setKafkaError] = useState(null);
+  const [kafkaTraceId, setKafkaTraceId] = useState(null);
 
   const executeRequest = async (url, options = {}) => {
     setLoading(true);
@@ -160,7 +161,13 @@ function SpringApp() {
       const res = await fetch("/api/kafka/publish", {
         method: "POST"
       });
+      // Extract trace ID from response headers
+      const responseTraceId =
+          res.headers.get("trace-id") ||
+          res.headers.get("x-trace-id") ||
+          res.headers.get("trace_id");
 
+      setKafkaTraceId(responseTraceId);
       const data = await res.text();
 
       if (!res.ok) {
@@ -559,6 +566,22 @@ function SpringApp() {
                 </p>
                 <p className="mt-2 text-sm text-green-300">
                   {kafkaMessage}
+                </p>
+              </div>
+          )}
+
+          { kafkaTraceId && (
+              <div className="mt-5 rounded-xl border border-indigo-500/20 bg-indigo-500/5 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wider text-indigo-400">
+                  Kafka Publish Trace ID
+                </p>
+
+                <code className="mt-2 block break-all rounded-lg border border-slate-800 bg-slate-950 p-4 font-mono text-sm text-indigo-300">
+                  {kafkaTraceId}
+                </code>
+
+                <p className="mt-2 text-xs text-slate-500">
+                  Copy this ID and search for the trace in Grafana Tempo.
                 </p>
               </div>
           )}
