@@ -45,8 +45,8 @@ function Home() {
           </h2>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
-            A hands-on observability demo connecting React RUM with Spring Boot,
-            Golang and Node.js services using OpenTelemetry and OpenObserve.
+            A hands-on observability demo connecting React RUM - Grafana Alloy with Spring Boot,
+            Golang and Node.js services using OpenTelemetry and LGTM Stack.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -55,7 +55,7 @@ function Home() {
             </span>
 
             <span className="rounded-lg border border-slate-700 bg-slate-800/70 px-3 py-2 text-xs font-medium text-slate-300">
-              OpenObserve
+              LGTM Stack
             </span>
 
             <span className="rounded-lg border border-slate-700 bg-slate-800/70 px-3 py-2 text-xs font-medium text-slate-300">
@@ -136,7 +136,7 @@ function Home() {
             <Arrow />
             <PipelineItem label="OpenTelemetry" />
             <Arrow />
-            <PipelineItem label="OpenObserve" />
+            <PipelineItem label="LGTM Stack" />
           </div>
         </div>
       </section>

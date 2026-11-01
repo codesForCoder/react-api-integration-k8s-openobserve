@@ -26,7 +26,7 @@ function Layout() {
               </h1>
 
               <p className="text-xs text-slate-400">
-                OpenTelemetry · OpenObserve · RUM
+                OpenTelemetry · LGTM Stack · RUM - Grafana Alloy
               </p>
             </div>
           </Link>
@@ -76,7 +76,7 @@ function Layout() {
           <span>Observability Demo</span>
 
           <span>
-            OpenTelemetry <span className="mx-1">·</span> OpenObserve
+            OpenTelemetry <span className="mx-1">·</span> LGTM Stack
           </span>
         </div>
       </footer>
